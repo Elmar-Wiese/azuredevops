@@ -29,7 +29,10 @@ function updateExtension(extParams: {
         const taskPath = path.join(tasksFolder, task);
         const taskDefPath = path.join(taskPath, 'task.json');
         const taskDef:AzureDevOpsTaskDef = JSON.parse(fs.readFileSync(taskDefPath, 'utf-8'));
-        let taskTarget = taskDef.execution?.Node16?.target;
+        let taskTarget = taskDef.execution?.Node20_1?.target;
+        if (taskTarget === undefined) {
+            taskTarget = taskDef.execution?.Node16?.target;
+        }
         if(taskTarget === undefined) {
             taskTarget = taskDef.execution?.Node10?.target;
         }
