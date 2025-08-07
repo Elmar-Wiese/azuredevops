@@ -198,6 +198,10 @@
     "Node16": {
       "target": "dependency-check-build-task.js",
       "argumentFormat": ""
+    },
+    "Node20_1": {
+      "target": "dependency-check-build-task.js",
+      "argumentFormat": ""
     }
   }
 }
